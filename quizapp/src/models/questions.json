@@ -1,0 +1,324 @@
+
+{"questions":[
+	
+{"id":1, 
+	"question":"What is the alternative for the inheritance\nproblems in object oriented programming?",
+	"answerA":"Cohesion",
+	"answerB":"Composition",
+	"answerC":"Coupling",
+	"correct":"bAnswer"
+	},
+
+{"id":2, 
+	"question":"Which design pattern builds an abstract\nbase class with a skeletal method that drives\nthe bit of the processing that needs to vary,\nand does so by making calls to abstract\nmethods?",
+	"answerA":"Template method",
+	"answerB":"Adapter",
+	"answerC":"Visitor",
+	"correct":"aAnswer"
+	},	
+	
+{"id":3, 
+	"question":"Which design pattern defines a one-to-many\ndependency between objects so that when one object\nchanges state, all its dependents are\nnotified and updated automatically?",
+	"answerA":"Observer",
+	"answerB":"Singleton",
+	"answerC":"Template method",
+	"correct":"aAnswer"
+	},
+
+{"id": 4, 
+	"question":"This design pattern defines a family of\nalgorithms, encapsulates each one, and make\nthem interchangeable.",
+	"answerA":"Command",
+	"answerB":"Observer",
+	"answerC":"Strategy",
+	"correct":"cAnswer"
+	},
+	
+{"id": 5, 
+	"question":"Which is one of the prime drivers of software complexity?",
+	"answerA":"Instability",
+	"answerB":"Irreversibility",
+	"answerC":"Volatility",
+	"correct":"bAnswer"
+	},
+
+{"id":6, 
+	"question":"Which programming language first introduced the concept\nof “refactoring”?",
+	"answerA":"Smalltalk",
+	"answerB":"Ruby",
+	"answerC":"Fortran",
+	"correct":"aAnswer"
+	},
+
+{"id":7, 
+	"question":"Which is the activity where you divide your time between\n2 different activities: refactoring and\nadding function?",
+	"answerA":"Two-face",
+	"answerB":"Two hats",
+	"answerC":"Software dichotomy",
+	"correct":"bAnswer"
+	},
+
+{"id":8, 
+	"question":"What is the number one bad smell in code?",
+	"answerA":"Data clumps",
+	"answerB":"Primitive obsession",
+	"answerC":"Duplicated code",
+	"correct":"cAnswer"
+	},
+
+{"id":9, 
+	"question":"What you should NOT do when using tests in order to develop software?",
+	"answerA":"Write tests to eliminate debugging.",
+	"answerB":"Remember that exceptions are raised when something goes wrong",
+	"answerC":"Concentrate tests in boundary conditions",
+	"correct":"aAnswer"
+	},
+
+{"id": 10, 
+	"question":"Which design pattern composes objects into tree structures to\nrepresent part-whole hierarchies and lets clients treat\nindividual objects and compositions of objects uniformly?",
+	"answerA":"Adapter",
+	"answerB":"Composite",
+	"answerC":"Builder",
+	"correct":"bAnswer"
+	},
+
+{"id":11, 
+	"question":"Which design pattern provides a way to access the\nelements of an aggregate object sequentially without\nexposing its underlying representation?",
+	"answerA":"Iterator",
+	"answerB":"Builder",
+	"answerC":"Template",
+	"correct":"aAnswer"
+	},
+
+{"id":12, 
+	"question":"Which design pattern encapsulates a request as an\nobject, letting you parameterize clients with different requests, queue or log requests, and support undoable operations?",
+	"answerA":"Builder",
+	"answerB":"Command",
+	"answerC":"Adapter",
+	"correct":"bAnswer"
+	},
+	
+
+{"id":13, 
+	"question":"What is the best iterator to merge two sorted arrays in Ruby?",
+	"answerA":"Coroutine",
+	"answerB":"Generator",
+	"answerC":"External",
+	"correct":"cAnswer"
+	},
+
+{"id":14, 
+	"question":"Which design pattern is used extensively by FXRuby GUI library?",
+	"answerA":"Composite",
+	"answerB":"Adapter",
+	"answerC":"Builder",
+	"correct":"aAnswer"
+	},
+	
+{"id": 15, 
+	"question":"Which design pattern converts the interface of a class into\nanother interface clients expect and lets classes work\ntogether that couldn’t otherwise because of\nincompatible interfaces?",
+	"answerA":"Adapter",
+	"answerB":"Composite",
+	"answerC":"Builder",
+	"correct":"aAnswer"
+	},
+	
+{"id": 16, 
+	"question":"Which design pattern provides a surrogate or placeholder\nfor another object to control access\nto it?",
+	"answerA":"Template method",
+	"answerB":"Singleton",
+	"answerC":"Proxy",
+	"correct":"cAnswer"
+	},
+	
+{"id":17, 
+	"question":"Which design pattern consists in attaching additional\nresponsibilities to an object dynamically, thus\nproviding a flexible alternative to subclassing\nfor extending functionality?",
+	"answerA":"Mediator",
+	"answerB":"Decorator",
+	"answerC":"Interpreter",
+	"correct":"bAnswer"
+	},
+
+{"id": 18, 
+	"question":"Which design pattern ensures a class that has only one\ninstance, and provides a global point of\naccess to it?",
+	"answerA":"Observer",
+	"answerB":"Singleton",
+	"answerC":"Adapter",
+	"correct":"bAnswer"
+	},
+
+{"id":19, 
+	"question":"Which design pattern provides an interface for creating\nfamilies of related or dependent objects without specifying\ntheir concrete classes?",
+	"answerA":"Iterator",
+	"answerB":"Strategy",
+	"answerC":"Abstract factory",
+	"correct":"cAnswer"
+	},
+
+{"id":20, 
+	"question":"Which design pattern separates the construction of\na complex object from its representation so that the same construction\nprocess can create different representations?",
+	"answerA":"Singleton",
+	"answerB":"Composite",
+	"answerC":"Builder",
+	"correct":"cAnswer"
+	},
+
+{"id":21, 
+	"question":"Which is the design pattern defines a representation\nfor its grammar along with an evaluator that uses the representation\nto interpret sentences in the language?",
+	"answerA":"Interpreter",
+	"answerB":"Observer",
+	"answerC":"Builder",
+	"correct":"aAnswer"
+	},
+
+{"id":22, 
+	"question":"Which design pattern consists of writing computer\nprograms that write or manipulate other programs\nas their data?",
+	"answerA":"Cohesion",
+	"answerB":"Meta-programming",
+	"answerC":"Coupling",
+	"correct":"bAnswer"
+	},
+
+{"id":23, 
+	"question":"Which design pattern seeks to decrease the number\nof decisions that developers need to make, gaining simplicity, but not\nnecessarily losing flexibility.\nBasically, a developer only needs to specify unconventional\naspects of the application?",
+	"answerA":"Adapter",
+	"answerB":"Command",
+	"answerC":"Convention over configuration",
+	"correct":"cAnswer"
+	},
+	
+{"id":24, 
+	"question":"Which Ruby framework contains a lot of examples of meta-programming?",
+	"answerA":"Drupal",
+	"answerB":"Rails",
+	"answerC":"Hadoop",
+	"correct":"bAnswer"
+	},
+
+{"id":25, 
+	"question":"Which design pattern makes a problem easier to solve\nby giving the user a convenient syntax for expressing\nthe problem in the first place?",
+	"answerA":"Mediator",
+	"answerB":"Visitor",
+	"answerC":"Domain-specific language",
+	"correct":"cAnswer"
+	},
+
+{"id": 26, 
+	"question":"What is a form that describes a commonly occurring\nsolution to a problem that generates\nnegative consequences?",
+	"answerA":"AntiPattern",
+	"answerB":"Composition",
+	"answerC":"Coupling",
+	"correct":"aAnswer"
+	},
+
+{"id":27, 
+	"question":"It is a form of code modification used to improve\nthe software structure in support of subsequent\nextension and long-term maintenance.",
+	"answerA":"Cohesion",
+	"answerB":"Software refactoring",
+	"answerC":"Coupling",
+	"correct":"bAnswer"
+	},
+	
+{"id":28, 
+	"question":"Which AntiPattern focuses on the system-level and\nenterprise-level structure of\napplications and components?",
+	"answerA":"Project Management AntiPattern",
+	"answerB":"Development AntiPattern",
+	"answerC":"Architecture AntiPattern",
+	"correct":"cAnswer"
+	},
+
+{"id":29, 
+	"question":"Which AntiPattern identifies some of the key scenarios\nin which issues are destructive to software processes?",
+	"answerA":"Project Management AntiPattern",
+	"answerB":"Development AntiPattern",
+	"answerC":"Architecture AntiPattern",
+	"correct":"aAnswer"
+	},
+
+{"id":30, 
+	"question":"Which AntiPattern solution includes a reallocation\nof responsibilities to longer-lived objects?",
+	"answerA":"Poltergeists",
+	"answerB":"Dead End",
+	"answerC":"Golden Hammer",
+	"correct":"aAnswer"
+	},
+
+{"id":31, 
+	"question":"Which AntiPattern is found in designs where one\nclass monopolizes the processing?",
+	"answerA":"Lava Flow",
+	"answerB":"The Blob",
+	"answerC":"Spaghetti Code",
+	"correct":"bAnswer"
+	},
+	
+{"id":32, 
+	"question":"Which AntiPattern is found in systems that\noriginated as research but ended up in production?",
+	"answerA":"Lava Flow",
+	"answerB":"The Blob",
+	"answerC":"Spaghetti Code",
+	"correct":"aAnswer"
+	},
+
+{"id":33, 
+	"question":"Which AntiPattern is typical in cases where designers\nfamiliar with process modeling but new to object-oriented\ndesign define architectures?",
+	"answerA":"Mushroom Management",
+	"answerB":"Dead End",
+	"answerC":"Poltergeists",
+	"correct":"cAnswer"
+	},
+	
+{"id": 34, 
+	"question":"Which AntiPattern is a piece of software or hardware\nthat serves no useful purpose on the current project?",
+	"answerA":"Golden Hammer",
+	"answerB":"Boat Anchor",
+	"answerC":"Cut-And-Paste Programming",
+	"correct":"bAnswer"
+	},
+
+{"id":35, 
+	"question":"Which AntiPattern results in the misapplication\nof a favored tool or concept?",
+	"answerA":"Golden Hammer",
+	"answerB":"Boat Anchor",
+	"answerC":"Lava Flow",
+	"correct":"aAnswer"
+	},
+
+{"id":36, 
+	"question":"Which AntiPattern is reached by modifying\na reusable component?",
+	"answerA":"The Blob",
+	"answerB":"Dead End",
+	"answerC":"Spaghetti Code",
+	"correct":"bAnswer"
+	},
+
+{"id": 37, 
+	"question":"Which AntiPattern is appears as a program or system that\ncontains very little software structure?",
+	"answerA":"The Blob",
+	"answerB":"Dead End",
+	"answerC":"Spaghetti Code",
+	"correct":"cAnswer"
+	},
+
+{"id":38, 
+	"question":"Which AntiPattern is identified by the presence\nof several similar segments of code interspersed\nthroughout the software project?",
+	"answerA":"Cut-And-Paste Programming",
+	"answerB":"Mushroom Management",
+	"answerC":"Dead End",
+	"correct":"aAnswer"
+	},
+
+{"id":39, 
+	"question":"Which AntiPattern is also known as “Pseudo-Analysis”\nand “Blind Development”?",
+	"answerA":"Lava Flow",
+	"answerB":"Mushroom Management",
+	"answerC":"Golden Hammer",
+	"correct":"bAnswer"
+	},
+
+{"id": 40, 
+	"question":"Which patterns are concerned with how\nclasses and objects are composed\nto form larger structures?",
+	"answerA":"Structural",
+	"answerB":"Behavioral",
+	"answerC":"Creational",
+	"correct":"aAnswer"
+	}
+]}

@@ -1,0 +1,123 @@
+<!--Each question is displayed using this layout-->
+<head>
+    <!--The title takes the variable "number" to display which question the user
+    is on-->
+    <title>Question #<%=@counter%></title>
+    <!--Call to Jquery-->
+    <script type="text/javascript" src="support/jquery-latest.js"></script>
+    <!--W3.css and our own stylesheet for this page are called-->
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" type="text/css" href="stylesheets/styleQuiz.css">
+    <!--Icon for the browser because we gotta keep it classy-->
+    <link rel="icon" href="favicon.png">
+</head>
+
+<!--This script manages jQuery and Javascript functions-->
+<script>
+    //Changes the background color of a button to green
+    function turnGreen(id){
+        hash="#"
+        $(hash.concat(id)).css("background-color","green");
+    }
+    
+    //Changes the background color of a button to red
+    function turnRed(id){
+        hash="#"
+        $(hash.concat(id)).css("background-color","red");
+    }
+    
+    //Makes the submit button visible
+    function displayButton(){
+        $(".next").css("display", "inline");
+    }
+    
+    //Makes the answer buttons unclickable
+    function disableOptions(){
+        $("#aAnswer").attr("disabled", true);
+        $("#bAnswer").attr("disabled", true);
+        $("#cAnswer").attr("disabled", true);
+    }
+    
+    //Checks if the answers are correct and changes the color of the buttons
+    //accordingly, it also sends the value that is going to be posted from this
+    //page
+    function compareAnswers (id, correct){
+        //Answer is correct
+        if(correct==id){
+            //Turn this button green
+            turnGreen(id);
+            //Send a "correct" value in the post
+            $("#nextButton").attr("value",1);
+        }
+        //Answer is wrong
+        else{
+            //Turn this button red
+            turnRed(id);
+            //Turns the correct button green
+            turnGreen(correct);
+        }
+    }
+    
+    //This function is called every time a button is clicked
+    function clickOption(id, correct){
+        //Buttons are disabled
+        disableOptions();
+        //Answers are managed
+        compareAnswers(id, correct);
+        //Submit button is turned visible
+        displayButton();
+    }
+    
+</script>
+
+<body> 
+    <!--Displays the current progress through the "counter" and "number"
+    variables-->
+    <h1 class="w3-center"><%=@counter%>/<%=@number%></h1>
+    <!--States what question the user is on-->
+    <h2 class="w3-center">Question #<%=@counter%></h2>
+    <!--The question text is displayed here-->
+    <p class="w3-center"><%=@questionaire[@counter-1].question%></p>
+    
+    <!--This list lists a button for each answer-->
+    <ul class="w3-center">
+        <!--Answer a-->
+        <li>
+            <button class="w3-button button" id="aAnswer" 
+            onclick="clickOption('aAnswer', '<%=@questionaire[@counter-1].correct%>');">
+                <%=@questionaire[@counter-1].answerA%> 
+            </button>
+        </li>
+        <!--Answer b-->
+        <li>
+            <button  class="w3-button button" id="bAnswer" 
+                onclick="clickOption('bAnswer', '<%=@questionaire[@counter-1].correct%>');">
+                <%=@questionaire[@counter-1].answerB%>
+            </button>
+        </li>
+        <!--Answer c-->
+        <li>
+            <button class="w3-button button" id="cAnswer" 
+                onclick="clickOption('cAnswer', '<%=@questionaire[@counter-1].correct%>');">
+                <%=@questionaire[@counter-1].answerC%>
+            </button>
+        </li>
+    </ul>
+    
+    <!--Submit button, which is invisible until an answer is clicked-->
+   <form method="post" class="w3-center">
+        <button type="submit" name=correct value=0 
+        id="nextButton" class="next w3-button"> 
+            ->
+        </button>
+    </form>
+    
+</body>
+
+<!--This text is displayed at the bottom of the page-->
+<footer class="w3-bottom"> 
+    Francisco Geada Rodríguez A01168958 
+    <br> María Fernanda Cruz Gonzalez A01373179
+    <br> Powered by <a href=http://www.sinatrarb.com/>Sinatra</a> (both in code and 
+    <a href=http://www.sinatra.com/>music</a>) and caffeine... loads of it.
+</footer>

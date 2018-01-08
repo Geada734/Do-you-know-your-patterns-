@@ -1,0 +1,25 @@
+<!--Results page, the user is taken here after the end of a quiz-->
+<head>
+    <title>Results</title>
+    <!--W3.css and our own stylesheet for this page are called-->
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" type="text/css" href="stylesheets/styleResults.css">
+    <!--Icon for the browser because we gotta keep it classy-->
+    <link rel="icon" href="favicon.png">
+</head>
+
+<body>
+    <h1 class="w3-center">Your score is...</h1>
+    <!--Displays how many questions were correct out of the total questions-->
+    <h2 class="w3-center"><%=@score%>/<%=@number%></h2>
+    <!--Takes the user back to the homepage allowing them to retake the test-->
+    <p class="w3-center"><a href='/'>Go back</a></p>
+</body>
+
+<!--This text is displayed at the bottom of the page-->
+<footer class="w3-bottom"> 
+    Francisco Geada Rodríguez A01168958 
+    <br> María Fernanda Cruz Gonzalez A01373179
+    <br> Powered by <a href=http://www.sinatrarb.com/>Sinatra</a> (both in code and 
+    <a href=http://www.sinatra.com/>music</a>) and caffeine... loads of it.
+</footer>

@@ -1,0 +1,55 @@
+
+/*Stylesheet for the main layout at quiz.erb*/
+
+body{
+    font-family: Consolas;
+    background-image: url(/wallpaper.jpg);
+    background-repeat: no-repeat; 
+    background-size: cover; 
+    background-position: center center;
+    
+}
+
+h1{
+    font-family: Consolas;
+}
+
+h2{
+    font-family: Consolas;
+    
+}
+
+p{
+    font-size: 150%;
+    padding-top: 3cm
+}
+
+ul{
+    list-style-type: none;
+}
+
+li{
+    margin-top: 15px;
+}
+
+.button{
+    font-family: Consolas;
+    background-color: #A0A0A0;
+    color: white;
+    border-radius: 12px;
+    width: 30%;
+}
+
+.next{
+    display: none;
+    font-family: Consolas;
+    margin-top: 3cm;
+    background-color: crimson;
+    color: white;
+    border-radius:12px;
+    font-size:300%;
+}
+
+footer{
+    font-family: Consolas;
+}

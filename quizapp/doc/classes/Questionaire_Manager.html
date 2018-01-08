@@ -1,0 +1,136 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html lang='en'>
+<head>
+<title>Questionaire_Manager</title>
+<meta content='text/html; charset=UTF-8' http-equiv='Content-Type'>
+<link href='../css/style.css' media='screen' rel='stylesheet' type='text/css'>
+<script type='text/javascript'>
+  function popupCode(url) {
+    window.open(url, "Code", "resizable=yes,scrollbars=yes,toolbar=no,status=no,height=150,width=400")
+  }
+  
+  function toggleCode(id) {
+    var code = document.getElementById(id)
+  
+    code.style.display = code.style.display != 'block' ? 'block' : 'none'
+    return true
+  }
+  
+  // Make codeblocks hidden by default
+  document.writeln('<' + 'style type="text/css">.method .source pre { display: none }<\/style>')
+</script>
+</head>
+<body class='page'>
+<div class='class' id='wrapper'>
+<div class='header'>
+<h1 class='name'><span class='type'>class</span>
+Questionaire_Manager
+</h1>
+<ol class='paths'>
+<li>
+<a href="../files/src/models/questionaire_manager_rb.html">src/models/questionaire_manager.rb</a>
+</li>
+</ol>
+<div class='parent'>
+Superclass:
+<strong><a href="Object.html">Object</a></strong>
+</div>
+</div>
+<div id='content'>
+<div id='text'>
+<div id='description'></div>
+<div id='method-list'>
+<h2>Methods</h2>
+<h3>Public Class</h3>
+<ol>
+<li><a href="#method-c-new">new</a></li>
+</ol>
+<h3>Public Instance</h3>
+<ol>
+<li><a href="#method-i-genQuestionaire">genQuestionaire</a></li>
+<li><a href="#attribute-i-number">number</a></li>
+<li><a href="#attribute-i-questions">questions</a></li>
+</ol>
+</div>
+<div id='context'>
+</div>
+<div id='section'>
+<div id='attribute-list'>
+<h2 class='section-bar'>Attributes</h2>
+<div class='name-list'>
+<table>
+<tr class='top-aligned-row context-row'>
+<td class='context-item-name'>
+<a name='attribute-i-number'>number</a>
+</td>
+<td class='context-item-value'>[RW]</td>
+<td class='context-item-desc'>
+<p>Class is initialized</p>
+</td>
+</tr>
+<tr class='top-aligned-row context-row'>
+<td class='context-item-name'>
+<a name='attribute-i-questions'>questions</a>
+</td>
+<td class='context-item-value'>[RW]</td>
+<td class='context-item-desc'>
+<p>Class is initialized</p>
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div id='methods'>
+<h2>Public Class methods</h2>
+<div class='method public-class' id='method-method-c-new'>
+<a name='method-c-new'></a>
+<div class='synopsis'>
+<span class='name'>new</span>
+<span class='arguments'>(n)</span>
+
+</div>
+<div class='description'>
+
+<p>Method that initializes the lass</p>
+
+</div>
+<div class='source'>
+<a class='source-toggle' href='#' onclick='toggleCode(&#39;method-c-new-source&#39;); return false'>
+[show source]
+</a>
+<pre id='method-c-new-source'><span class="ruby-comment"># File src/models/questionaire_manager.rb, line 15</span>&#x000A;<span class="ruby-keyword">def</span> <span class="ruby-identifier">initialize</span> <span class="ruby-identifier">n</span>&#x000A;  <span class="ruby-comment">#Number of questions for this quiz</span>&#x000A;  <span class="ruby-ivar">@number</span>=<span class="ruby-identifier">n</span>&#x000A;  <span class="ruby-comment">#Questions that are going to be used</span>&#x000A;  <span class="ruby-ivar">@questions</span>=[]&#x000A;  <span class="ruby-comment">#Connection to the database from where the questions are going to be taken</span>&#x000A;  <span class="ruby-ivar">@DB</span>=<span class="ruby-constant">Sequel</span>.<span class="ruby-identifier">connect</span>(<span class="ruby-string">&quot;sqlite://./models/questions.db&quot;</span>)&#x000A;<span class="ruby-keyword">end</span></pre>
+</div>
+</div>
+<h2>Public Instance methods</h2>
+<div class='method public-instance' id='method-method-i-genQuestionaire'>
+<a name='method-i-genQuestionaire'></a>
+<div class='synopsis'>
+<span class='name'>genQuestionaire</span>
+<span class='arguments'>()</span>
+
+</div>
+<div class='description'>
+
+<p>Generate the questionaire and scrambles available questions</p>
+
+</div>
+<div class='source'>
+<a class='source-toggle' href='#' onclick='toggleCode(&#39;method-i-genQuestionaire-source&#39;); return false'>
+[show source]
+</a>
+<pre id='method-i-genQuestionaire-source'><span class="ruby-comment"># File src/models/questionaire_manager.rb, line 25</span>&#x000A;<span class="ruby-keyword">def</span> <span class="ruby-identifier">genQuestionaire</span>&#x000A;  <span class="ruby-comment">#Table &quot;questions&quot; from the database through instance variable &quot;roster&quot;</span>&#x000A;  <span class="ruby-identifier">roster</span>=<span class="ruby-ivar">@DB</span>[<span class="ruby-value">:questions</span>]&#x000A;  <span class="ruby-comment">#Limit for the iterator that will generate the list of questions</span>&#x000A;  <span class="ruby-identifier">lim</span>=<span class="ruby-ivar">@number</span><span class="ruby-operator">-</span><span class="ruby-value">1</span>&#x000A;  <span class="ruby-comment">#Space available</span>&#x000A;  <span class="ruby-identifier">available</span>=[]&#x000A;  <span class="ruby-comment">#This iterator stores the whole database in the &quot;available&quot; variable</span>&#x000A;  <span class="ruby-comment">#in the form of several &quot;Question&quot; objects</span>&#x000A;  (<span class="ruby-value">1</span><span class="ruby-operator">..</span><span class="ruby-value">40</span>).<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">index</span><span class="ruby-operator">|</span>&#x000A;    <span class="ruby-comment">#Paramters for the &quot;Question&quot; class are set</span>&#x000A;    <span class="ruby-comment">#Question text</span>&#x000A;    <span class="ruby-identifier">q</span>=<span class="ruby-identifier">roster</span>.<span class="ruby-identifier">first</span>(<span class="ruby-identifier">id</span><span class="ruby-operator">:</span> <span class="ruby-identifier">index</span>)[<span class="ruby-value">:question</span>].<span class="ruby-identifier">to_s</span>&#x000A;    <span class="ruby-comment">#Answer a</span>&#x000A;    <span class="ruby-identifier">a</span>=<span class="ruby-identifier">roster</span>.<span class="ruby-identifier">first</span>(<span class="ruby-identifier">id</span><span class="ruby-operator">:</span> <span class="ruby-identifier">index</span>)[<span class="ruby-value">:answerA</span>].<span class="ruby-identifier">to_s</span>&#x000A;    <span class="ruby-comment">#Answer b</span>&#x000A;    <span class="ruby-identifier">b</span>=<span class="ruby-identifier">roster</span>.<span class="ruby-identifier">first</span>(<span class="ruby-identifier">id</span><span class="ruby-operator">:</span> <span class="ruby-identifier">index</span>)[<span class="ruby-value">:answerB</span>].<span class="ruby-identifier">to_s</span>&#x000A;    <span class="ruby-comment">#Answer c</span>&#x000A;    <span class="ruby-identifier">c</span>=<span class="ruby-identifier">roster</span>.<span class="ruby-identifier">first</span>(<span class="ruby-identifier">id</span><span class="ruby-operator">:</span> <span class="ruby-identifier">index</span>)[<span class="ruby-value">:answerC</span>].<span class="ruby-identifier">to_s</span>&#x000A;    <span class="ruby-comment">#Correct answer</span>&#x000A;    <span class="ruby-identifier">corr</span>=<span class="ruby-identifier">roster</span>.<span class="ruby-identifier">first</span>(<span class="ruby-identifier">id</span><span class="ruby-operator">:</span> <span class="ruby-identifier">index</span>)[<span class="ruby-value">:correct</span>].<span class="ruby-identifier">to_s</span>&#x000A;    <span class="ruby-comment">#Questions are built</span>&#x000A;    <span class="ruby-identifier">available</span>.<span class="ruby-identifier">push</span> <span class="ruby-constant">Question</span>.<span class="ruby-identifier">new</span> <span class="ruby-identifier">q</span>, <span class="ruby-identifier">a</span>, <span class="ruby-identifier">b</span>, <span class="ruby-identifier">c</span>, <span class="ruby-identifier">corr</span>&#x000A;  <span class="ruby-keyword">end</span>&#x000A;  &#x000A;  <span class="ruby-comment">#The &quot;available&quot; variable is randomized and stored in the &quot;scrambled&quot; variable</span>&#x000A;  <span class="ruby-identifier">scrambled</span>=<span class="ruby-identifier">available</span>.<span class="ruby-identifier">shuffle</span>&#x000A;  &#x000A;  <span class="ruby-comment">#This iterator takes the number of questions specified by the users and stores </span>&#x000A;  <span class="ruby-comment">#them in the final questionaire</span>&#x000A;  (<span class="ruby-value">0</span><span class="ruby-operator">..</span><span class="ruby-identifier">lim</span>).<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">question</span><span class="ruby-operator">|</span>&#x000A;    <span class="ruby-ivar">@questions</span>.<span class="ruby-identifier">push</span> <span class="ruby-identifier">scrambled</span>[<span class="ruby-identifier">question</span>]&#x000A;  <span class="ruby-keyword">end</span>&#x000A;  <span class="ruby-identifier">puts</span> &#x000A;<span class="ruby-keyword">end</span></pre>
+</div>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+
+<div id='footer-push'></div>
+</div>
+<div id='footer'>
+<a href="https://github.com/rdoc/hanna-nouveau"><strong>Hanna Nouveau</strong> RDoc template</a>
+</div>
+</body>
+</html>

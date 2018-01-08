@@ -1,0 +1,22 @@
+/*Stylesheet for the results page at results.erb*/
+
+body{
+    font-family: Consolas;
+    background-image: url(/wallpaper.jpg);
+    background-repeat: no-repeat; 
+    background-size: cover; 
+    background-position: center center;
+}
+
+h1{
+    font-family: Consolas;
+}
+
+h2{
+    font-family: Consolas;
+    color: #A0A0A0;
+}
+
+footer{
+    font-family: Consolas;
+}

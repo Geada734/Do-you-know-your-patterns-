@@ -1,0 +1,44 @@
+<!--Homepage for the application-->
+<head>
+    <title> Are you good enough?</title>
+    <!--W3.css and our own stylesheet for this page are called-->
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" type="text/css" href="stylesheets/styleIndex.css">
+    <!--Icon for the browser because we gotta keep it classy-->
+    <link rel="icon" href="favicon.png">
+</head>
+
+<body>
+    <!--General body text-->
+    <h1 class="w3-center">Welcome!</h1>
+    <h2 class="w3-center">
+        This is the hardest test on design patterns you will ever take. 
+        <br>Are you up to the challenge?
+    </h2>
+    <!--Creates the POST method consisting of a collapsable menu to choose the 
+    number of questions and a button to submit this option-->
+    <form method="post">
+        <div class="w3-center">
+            <label  for="number">
+                Select the number of questions:
+            </label> 
+            <!--The collapsable menu is created using embeded ruby-->
+            <select name="number" class="w3-center">
+                <% (1..10).each do |number| %>
+                    <option value=<%= number %>><%= number %></option>
+                <% end %>
+            </select>
+            <!--Submit button-->
+            <input type=submit value= "Take the test!" 
+            class="w3-button w3-display-middle button"/>
+        </div> 
+    </form>
+</body>
+
+<!--This text is displayed at the bottom of the page-->
+<footer class="w3-bottom"> 
+    Francisco Geada Rodríguez A01168958 
+    <br> María Fernanda Cruz Gonzalez A01373179
+    <br> Powered by <a href=http://www.sinatrarb.com/>Sinatra</a> (both in code and 
+    <a href=http://www.sinatra.com/>music</a>) and caffeine... loads of it.
+</footer>

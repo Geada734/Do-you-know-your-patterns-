@@ -1,0 +1,33 @@
+/*Style sheet for the homepage at index.erb*/
+
+body{
+    background-image: url(/wallpaper.jpg);
+    background-repeat: no-repeat; 
+    background-size: cover; 
+    background-position: center center;
+}
+
+h1{
+    font-family: Consolas;
+}
+
+h2{
+    font-family: Consolas;
+    color: #696969;
+}
+
+.button{
+    background-color: crimson; 
+    color: white; 
+    
+}
+
+div{
+    padding-top:5em;
+    font-family: Consolas;
+    font-size: 150%;
+}
+
+footer{
+    font-family: Consolas;
+}

@@ -1,0 +1,167 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html lang='en'>
+<head>
+<title>README.rdoc</title>
+<meta content='text/html; charset=UTF-8' http-equiv='Content-Type'>
+<link href='../css/style.css' media='screen' rel='stylesheet' type='text/css'>
+<script type='text/javascript'>
+  function popupCode(url) {
+    window.open(url, "Code", "resizable=yes,scrollbars=yes,toolbar=no,status=no,height=150,width=400")
+  }
+  
+  function toggleCode(id) {
+    var code = document.getElementById(id)
+  
+    code.style.display = code.style.display != 'block' ? 'block' : 'none'
+    return true
+  }
+  
+  // Make codeblocks hidden by default
+  document.writeln('<' + 'style type="text/css">.method .source pre { display: none }<\/style>')
+</script>
+</head>
+<body class='page'>
+<div class='file' id='wrapper'>
+<div class='header'>
+<h1 class='name'>README.rdoc
+</h1>
+<div class='paths'>
+README.rdoc
+</div>
+<div class='last-update'>
+Last Update:
+<span class='datetime'>2017-11-23 07:37:00 +0000</span>
+</div>
+</div>
+<div id='content'>
+<div id='text'>
+<div id='description'>
+<h1 id="label-Application+Design+and+Architecture">Application Design and Architecture<span><a href="#label-Application+Design+and+Architecture">&para;</a> <a href="#top">&uarr;</a></span></h1>
+<table class="rdoc-list note-list"><tbody><tr><td class='label'>Author</td><td>
+<p>Francisco Geada Rodríguez,  María Fernanda Cruz González</p>
+</td></tr><tr><td class='label'>Date</td><td>
+<p>November 23, 2017</p>
+</td></tr></tbody></table>
+
+<h2 id="label-Overview">Overview<span><a href="#label-Overview">&para;</a> <a href="#top">&uarr;</a></span></h2>
+
+<p>_Quizz App_ is a Ruby web application that tests the user about her/his
+knowledge on design patterns.</p>
+
+<p>This application was developed using the _Sinatra DSL_ using the
+_Model–View–Controller (MVC)_ architectural pattern. These models were
+implemented using the <em>Sequel</em> database toolkit for ORM
+(object-relational mapping) over SQLite3.</p>
+
+<p>First, the application asks the user the amount of questions to be
+answered. Then, the application chooses, from a bank of over 40 questions,
+a multiple choice question with 3 possible answers, and shows it to the
+user. After the user answers the question, the application tells the user
+if the answer was right or wrong, and shows the correct answer, in order to
+proceed to see and answer the next question. Once all questions have been
+answered, the application displays the number of questions answered
+correctly.</p>
+
+<p>The directory structure for the application and its documentation is as
+follows:</p>
+
+<pre>quizapp/&#x000A;      ├─ doc/                        Folder produced by RDoc.&#x000A;            ├─ classes/              Folder produced by RDoc.&#x000A;            ├─ css/                  Folder produced by RDoc.&#x000A;            ├─ files/                Folder produced by RDoc.&#x000A;      ├─ img/                        Folder for the documentation’s image files.&#x000A;      └─ src/                        Folder for the application’s source code.&#x000A;           ├─ models/                Folder for the application’s models.&#x000A;           ├─ public/                Folder for the server’s public documents.&#x000A;           │       └─ stylesheets/   Folder for the application’s CSS files.&#x000A;           │       └─ support/       Folder for the application’s support files.&#x000A;           └─ views/                 Folder for the application’s views (ERB files).</pre>
+
+<h2 id="label-Installing+and+Running+the+Application">Installing and Running the Application<span><a href="#label-Installing+and+Running+the+Application">&para;</a> <a href="#top">&uarr;</a></span></h2>
+
+<p>In order to run _Quiz App_ you need to have Ruby 2.3 or more recent and the
+<a target="_top" href="http://www.sinatrarb.com/">Sinatra</a> gem installed in your
+system.</p>
+
+<p>To install <em>Sinatra</em> and <em>Sequel</em>, type the following
+commands at the terminal:</p>
+
+<pre>$ sudo gem install sinatra&#x000A;$ gem install sequel</pre>
+
+<p>To run the _Quiz App_ web application, run the server by typing the
+following command at the terminal from the <code>quizapp/src</code>
+directory:</p>
+
+<pre>$ ruby -I . -w server.rb</pre>
+
+<p>Afterwards, point your web browser the server’s root URL.</p>
+
+<h2 id="label-4-2B1+Architectural+View+Model">4+1 Architectural View Model<span><a href="#label-4-2B1+Architectural+View+Model">&para;</a> <a href="#top">&uarr;</a></span></h2>
+
+<h3 id="label-Logical+View">Logical View<span><a href="#label-Logical+View">&para;</a> <a href="#top">&uarr;</a></span></h3>
+
+<p>The following figure represents the UML class diagram for the +Quiz App+
+model and its factory class:</p>
+
+<p><img src="img/logical.png"></p>
+
+<p>In this image we can see that <code>questionnare_manager</code> is the
+class who calls the database and instanciates the <code>question</code>
+objects</p>
+
+<h3 id="label-Process+View">Process View<span><a href="#label-Process+View">&para;</a> <a href="#top">&uarr;</a></span></h3>
+
+<p>Here we can see the steps followedin order to use the application.</p>
+
+<p><img src="img/process.png"></p>
+
+<h3 id="label-Development+View">Development View<span><a href="#label-Development+View">&para;</a> <a href="#top">&uarr;</a></span></h3>
+
+<p><img src="img/development.png"></p>
+
+<h3 id="label-Physical+View">Physical View<span><a href="#label-Physical+View">&para;</a> <a href="#top">&uarr;</a></span></h3>
+
+<p><img src="img/physical.png"></p>
+
+<h3 id="label-Scenarios">Scenarios<span><a href="#label-Scenarios">&para;</a> <a href="#top">&uarr;</a></span></h3>
+
+<p><img src="img/scenarios.png"></p>
+
+<h2 id="label-Patterns+Used">Patterns Used<span><a href="#label-Patterns+Used">&para;</a> <a href="#top">&uarr;</a></span></h2>
+
+<p>The patterns used for this application are:</p>
+<ul><li>
+<p><strong>Domain-Specific Language</strong>: The <code>server.rb</code> file
+consists of a series of Sinatra <em>routes</em>. Sinatra is a DSL for
+creating web applications in Ruby.</p>
+</li><li>
+<p><strong>Model-View-Controller</strong>: The application follows the
+classical web implementation of the MVC architectural pattern. The models
+(<code>.rb</code> files) and views (<code>.erb</code> files) are stored in
+the corresponding <code>models</code> and <code>views</code> directory.</p>
+</li><li>
+<p><strong>Simple Factory</strong>: The <code>Questionaire_Manager</code> is
+used to create <code>Question</code> instances.</p>
+</li></ul>
+
+<h2 id="label-References">References<span><a href="#label-References">&para;</a> <a href="#top">&uarr;</a></span></h2>
+<ul><li>
+<p>E. Gamma, R. Helm, R. Johnson, J. M. Vlissides. <em>Design Patterns:
+Elements of Reusable Object-Oriented Software.</em> Addison-Wesley, 1994.
+Available through <a
+href="http://proquestcombo.safaribooksonline.com/book/software-engineering-and-development/patterns/0201633612">Safari
+Books Online</a>.</p>
+</li><li>
+<p>A. Harris, K. Haase. <em>Sinatra: Up and Running.</em> O’Reilly, 2011. <a
+href="http://proquestcombo.safaribooksonline.com/book/web-development/ruby/9781449306847">Safari
+Books Online</a>.</p>
+</li><li>
+<p>R. Olsen. <em>Design Patterns in Ruby.</em> Addison-Wesley, 2007. Available
+through <a
+href="http://proquestcombo.safaribooksonline.com/book/web-development/ruby/9780321490452">Safari
+Books Online</a>.</p>
+</li></ul>
+</div>
+<div id='context'>
+</div>
+
+</div>
+</div>
+
+<div id='footer-push'></div>
+</div>
+<div id='footer'>
+<a href="https://github.com/rdoc/hanna-nouveau"><strong>Hanna Nouveau</strong> RDoc template</a>
+</div>
+</body>
+</html>
